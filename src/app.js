@@ -9,9 +9,27 @@ const Insertion = require("./Sort");
 // A link to our styles!
 require("./index.css");
 
-const sort = new Insertion([4, 3, 2, 10, 12, 1, 5, 6]);
-sort.sort();
-sort.click();
+const submitButton = document.getElementById("submitText");
+const submitText = document.getElementById("name");
+const message = document.getElementById("message");
+let count = 1;
+const array = [];
+
+const action = (input) => {
+  const number = Number(input);
+  array.push(number);
+  if (count < 5) {
+    count++;
+    submitText.value = "";
+    console.log(array);
+  } else {
+    message.textContent = "Complete! wait a second";
+    const sort = new Insertion(array);
+    sort.sort();
+  }
+};
+
+submitButton.addEventListener("click", () => action(submitText.value));
 
 function createCheesyTitle(slogan) {
   const container = document.createElement("h1");
@@ -20,8 +38,8 @@ function createCheesyTitle(slogan) {
   return container;
 }
 
-const title = createCheesyTitle(sort.returnValue("Re-Engineer Yourself"));
-document.getElementById("title").appendChild(title);
+// const title = createCheesyTitle(sort.returnValue("Re-Engineer Yourself"));
+// document.getElementById("title").appendChild(title);
 
 /*
     An simple example of how you can make your project a bit more

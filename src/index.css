@@ -1,3 +1,31 @@
 body {
   background-color: #55b491;
 }
+
+#text {
+  font-size: 30px;
+}
+
+label {
+  font-size: 30px;
+}
+
+form {
+  margin: 100px;
+}
+
+input {
+  height: 100px;
+  width: 100px;
+  font-size: 50px;
+  text-align: center;
+}
+
+form ::placeholder {
+  font-size: 15px;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+}
