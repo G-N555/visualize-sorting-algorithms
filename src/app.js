@@ -4,13 +4,14 @@
 */
 
 // How can we use require here if it's frontend? We can thank webpack.
-const Sort = require("./Sort");
+const Insertion = require("./Sort");
 
 // A link to our styles!
 require("./index.css");
 
-const sort = new Sort();
+const sort = new Insertion([4, 3, 2, 10, 12, 1, 5, 6]);
 sort.sort();
+sort.click();
 
 function createCheesyTitle(slogan) {
   const container = document.createElement("h1");
