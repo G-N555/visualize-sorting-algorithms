@@ -15,28 +15,20 @@ const message = document.getElementById("message");
 let count = 1;
 const array = [];
 
-const action = (input) => {
-  const number = Number(input);
-  array.push(number);
-  if (count < 5) {
-    count++;
-    submitText.value = "";
-    console.log(array);
-  } else {
-    message.textContent = "Complete! wait a second";
-    const sort = new Insertion(array);
-    sort.sort();
-  }
+const action = (strArr) => {
+  const arr = JSON.parse(strArr);
+  const sort = new Insertion(arr);
+  console.log(sort.sort());
 };
 
 submitButton.addEventListener("click", () => action(submitText.value));
 
-function createCheesyTitle(slogan) {
-  const container = document.createElement("h1");
-  const textNode = document.createTextNode(slogan);
-  container.appendChild(textNode);
-  return container;
-}
+// function createCheesyTitle(slogan) {
+//   const container = document.createElement("h1");
+//   const textNode = document.createTextNode(slogan);
+//   container.appendChild(textNode);
+//   return container;
+// }
 
 // const title = createCheesyTitle(sort.returnValue("Re-Engineer Yourself"));
 // document.getElementById("title").appendChild(title);
