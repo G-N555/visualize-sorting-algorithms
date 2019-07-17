@@ -20,7 +20,7 @@ const path = require("path");
 const app = express();
 
 // Create a port
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 // Have it serve up the index.html file
 app.use(express.static(path.join(__dirname)));

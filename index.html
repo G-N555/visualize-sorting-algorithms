@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Code Chrysalis</title>
+    <title>Insertion Sort</title>
   </head>
 
   <body>
@@ -11,20 +11,14 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div id="title"></div>
     <form>
-      <label for="name">Input random number!</label>
-      <input type="text" id="name" placeholder="put number" />
-      <input type="submit" id="submitText" />
-    </form>
-    <div>
-      <p id="message"></p>
-      <p id="text"></p>
-      <div id="lineArea">
-        <p id="line"></p>
+      <label for="name" id="labelTitle">Insertion sort!</label>
+      <div id="display_container">
+        <input type="text" id="name" placeholder="put number" />
+        <button type="button" id="submitText">Input!
+        <button type="button" id="actionButton" >Action!
+        <button type="button" id="random" >Random!
       </div>
-    </div>
-    <div id="display_container">
-      <p></p>
-    </div>
+    </form>
     <!--
     Where is this public/bundle.js file coming from?
     It comes from our trusty friend, webpack.

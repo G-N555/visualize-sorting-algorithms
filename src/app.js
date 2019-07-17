@@ -11,28 +11,32 @@ require("./index.css");
 
 const submitButton = document.getElementById("submitText");
 const submitText = document.getElementById("name");
-const message = document.getElementById("message");
-let count = 1;
-const array = [];
+const actionButton = document.getElementById("actionButton");
+const randomButton = document.getElementById("random");
+let insertClass;
 
-const action = (strArr) => {
-  const arr = JSON.parse(strArr);
-  const sort = new Insertion(arr);
-  console.log(sort.sort());
+const random = Array.from({ length: 1000 }, () =>
+  Math.floor(Math.random() * 40)
+);
+
+const randomInput = (random) => {
+  insertClass = new Insertion(random);
+  insertClass.dataInput();
 };
 
-submitButton.addEventListener("click", () => action(submitText.value));
+const input = (strArr) => {
+  const arr = JSON.parse(strArr);
+  insertClass = new Insertion(arr);
+  insertClass.dataInput();
+};
 
-// function createCheesyTitle(slogan) {
-//   const container = document.createElement("h1");
-//   const textNode = document.createTextNode(slogan);
-//   container.appendChild(textNode);
-//   return container;
-// }
+const action = () => {
+  insertClass.sort();
+};
 
-// const title = createCheesyTitle(sort.returnValue("Re-Engineer Yourself"));
-// document.getElementById("title").appendChild(title);
-
+submitButton.addEventListener("click", () => input(submitText.value));
+randomButton.addEventListener("click", () => randomInput(random));
+actionButton.addEventListener("click", () => action());
 /*
     An simple example of how you can make your project a bit more
     interactive, if you would like.
